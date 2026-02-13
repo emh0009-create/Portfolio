@@ -10,27 +10,6 @@ Es un portfolio que creé para la actividad final. La app tiene:
 - Contacto - Un formulario para que me puedan contactar
 - Tema claro/oscuro - Se puede cambiar entre tema claro y oscuro
 
-Estructura del Proyecto
-
-Así está organizado todo mi proyecto:
-
-src/app/
-├── components/         Los componentes (cada página/sección)
-│   ├── home/           La página de inicio
-│   ├── portfolio/      La página con mis proyectos
-│   ├── contact/        La página de contacto
-│   ├── navbar/         La barra de navegación
-│   ├── footer/         El pie de página
-│   └── project-card/   Las tarjetas de los proyectos
-├── services/           Los servicios (código reutilizable)
-│   ├── storage.service.ts    Guarda cosas en el navegador
-│   ├── theme.service.ts      Gestiona el tema claro/oscuro
-│   └── contact.service.ts    Maneja los mensajes de contacto
-└── models/             Las interfaces (tipos de datos)
-    ├── theme.enum.ts        Tipos de tema
-    ├── project.interface.ts  Estructura de un proyecto
-    └── contact-form.interface.ts Estructura del formulario
-
 - Características Principales
 
 - Componentes
