@@ -1,0 +1,157 @@
+<div class="contact-section py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="text-center mb-5">
+          <h1 class="display-4 fw-bold mb-3">Ponte en Contacto</h1>
+          <p class="lead text-muted">
+            Contacta conmigo con este formulario.
+          </p>
+        </div>
+
+        <!-- Mensajes de Alerta -->
+        <div *ngIf="showAlert" class="mb-4">
+          <div *ngIf="successMessage" class="alert alert-success alert-dismissible fade show" role="alert">
+            <i class="bi bi-check-circle-fill"></i>
+            {{ successMessage }}
+            <button
+              type="button"
+              class="btn-close"
+              (click)="showAlert = false"
+              aria-label="Cerrar"
+            ></button>
+          </div>
+          <div *ngIf="errorMessage" class="alert alert-danger alert-dismissible fade show" role="alert">
+            <i class="bi bi-exclamation-circle-fill"></i>
+            {{ errorMessage }}
+            <button
+              type="button"
+              class="btn-close"
+              (click)="showAlert = false"
+              aria-label="Cerrar"
+            ></button>
+          </div>
+        </div>
+
+        <!-- Formulario de Contacto -->
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+          <div class="mb-3">
+            <label for="fullName" class="form-label">Nombre Completo <span class="text-danger">*</span></label>
+            <input
+              type="text"
+              class="form-control"
+              id="fullName"
+              formControlName="fullName"
+              placeholder="Ingresa tu nombre completo"
+              [class.is-invalid]="hasError('fullName', 'required') || hasError('fullName', 'minlength')"
+            />
+            <div class="invalid-feedback" *ngIf="hasError('fullName', 'required')">
+              El nombre completo es obligatorio.
+            </div>
+            <div class="invalid-feedback" *ngIf="hasError('fullName', 'minlength')">
+              El nombre completo debe tener al menos 3 caracteres.
+            </div>
+          </div>
+
+          <!-- Campo de Correo Electrónico -->
+          <div class="mb-3">
+            <label for="email" class="form-label">Correo Electrónico <span class="text-danger">*</span></label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              formControlName="email"
+              placeholder="Ingresa tu correo"
+              [class.is-invalid]="hasError('email', 'required') || hasError('email', 'email')"
+            />
+            <div class="invalid-feedback" *ngIf="hasError('email', 'required')">
+              El correo electrónico es obligatorio.
+            </div>
+            <div class="invalid-feedback" *ngIf="hasError('email', 'email')">
+              Por favor ingresa una dirección de correo válida.
+            </div>
+          </div>
+
+          <!-- Campo de Asunto -->
+          <div class="mb-3">
+            <label for="subject" class="form-label">Asunto <span class="text-danger">*</span></label>
+            <input
+              type="text"
+              class="form-control"
+              id="subject"
+              formControlName="subject"
+              placeholder="¿De qué se trata?"
+              [class.is-invalid]="hasError('subject', 'required') || hasError('subject', 'minlength')"
+            />
+            <div class="invalid-feedback" *ngIf="hasError('subject', 'required')">
+              El asunto es obligatorio.
+            </div>
+            <div class="invalid-feedback" *ngIf="hasError('subject', 'minlength')">
+              El asunto debe tener al menos 5 caracteres.
+            </div>
+          </div>
+
+          <!-- Campo de Mensaje -->
+          <div class="mb-3">
+            <label for="message" class="form-label">Mensaje <span class="text-danger">*</span></label>
+            <textarea
+              class="form-control"
+              id="message"
+              formControlName="message"
+              rows="5"
+              placeholder="Cuéntame más sobre tu consulta..."
+              [class.is-invalid]="hasError('message', 'required') || hasError('message', 'minlength')"
+            ></textarea>
+            <div class="invalid-feedback" *ngIf="hasError('message', 'required')">
+              El mensaje es obligatorio.
+            </div>
+            <div class="invalid-feedback" *ngIf="hasError('message', 'minlength')">
+              El mensaje debe tener al menos 10 caracteres.
+            </div>
+          </div>
+
+          <!-- Acciones del Formulario -->
+          <div class="d-grid gap-2 d-md-flex justify-content-md-between">
+            <button type="submit" class="btn btn-primary btn-lg" [disabled]="contactService.isSubmitting()">
+              <span *ngIf="!contactService.isSubmitting()">
+                <i class="bi bi-send"></i> Enviar Mensaje
+              </span>
+              <span *ngIf="contactService.isSubmitting()">
+                <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                Enviando...
+              </span>
+            </button>
+            <button type="reset" class="btn btn-outline-secondary btn-lg" (click)="resetForm()">
+              <i class="bi bi-arrow-counterclockwise"></i> Limpiar
+            </button>
+          </div>
+        </form>
+
+        <!-- Información de Contacto -->
+        <div class="contact-info mt-5 pt-5 border-top">
+          <h3 class="mb-4">Otras Formas de Comunicarse Conmigo</h3>
+          <div class="row">
+            <div class="col-md-4 mb-3 mb-md-0">
+              <div class="info-item text-center">
+                <i class="bi bi-envelope display-6 text-primary mb-3"></i>
+                <h5>Correo</h5>
+                <p class="text-muted">
+                  <a href="mailto:your.email@example.com" class="text-decoration-none">emh0009@alu.medac.es</a>
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="info-item text-center">
+                <i class="bi bi-linkedin display-6 text-primary mb-3"></i>
+                <h5>LinkedIn</h5>
+                <p class="text-muted">
+                  <a href="https://linkedin.com" target="_blank" class="text-decoration-none">Enrique Moscoso de la Haza</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

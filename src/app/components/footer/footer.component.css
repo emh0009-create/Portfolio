@@ -1,0 +1,27 @@
+footer {
+  margin-top: auto;
+  border-top: 1px solid #495057;
+}
+
+footer a {
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #007bff !important;
+}
+
+footer h5 {
+  color: #007bff;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  footer {
+    font-size: 0.9rem;
+  }
+
+  footer h5 {
+    font-size: 1.1rem;
+  }
+}

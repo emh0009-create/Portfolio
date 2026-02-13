@@ -1,0 +1,139 @@
+.hero-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 60px 0;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+}
+
+.hero-section h1 {
+  color: white;
+  font-size: 3rem;
+}
+
+.hero-section .lead {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.25rem;
+}
+
+.hero-section p {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.profile-image {
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.btn-outline-primary {
+  color: white;
+  border-color: white;
+}
+
+.btn-outline-primary:hover {
+  background-color: white;
+  color: #007bff;
+}
+
+.skills-section {
+  background-color: #f8f9fa;
+}
+
+.skill-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #dee2e6;
+}
+
+.skill-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+.skill-card i {
+  color: #007bff;
+}
+
+.features-section {
+  background-color: white;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  background-color: #f8f9fa;
+  transition: background-color 0.3s ease;
+}
+
+.feature-item:hover {
+  background-color: #e9ecef;
+}
+
+.feature-item i {
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  flex-shrink: 0;
+}
+
+.feature-item h5 {
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: auto;
+    padding: 40px 0;
+  }
+
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+
+  .hero-section .lead {
+    font-size: 1rem;
+  }
+
+  .btn-group {
+    justify-content: flex-start;
+  }
+
+  .btn-lg {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .profile-image {
+    max-width: 300px;
+  }
+}

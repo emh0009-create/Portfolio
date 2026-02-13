@@ -1,0 +1,25 @@
+.portfolio-section {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.portfolio-section h1 {
+  color: #333;
+  font-size: 2.5rem;
+}
+
+.portfolio-section .lead {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .portfolio-section h1 {
+    font-size: 2rem;
+  }
+
+  .portfolio-section .lead {
+    font-size: 1rem;
+  }
+}

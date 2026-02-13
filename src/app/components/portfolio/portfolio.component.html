@@ -1,0 +1,20 @@
+<div class="portfolio-section py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h1 class="display-4 fw-bold mb-3">Mi Portafolio</h1>
+      <p class="lead text-muted">
+        Algunos de los proyectos, realizados por mí, tanto individual como en equipo.
+      </p>
+    </div>
+
+    <div class="row g-4">
+      <div *ngFor="let project of projects" class="col-md-6 col-lg-4">
+        <app-project-card [project]="project"></app-project-card>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 Enrique. Todos los derechos reservados.</p>
+</footer>
